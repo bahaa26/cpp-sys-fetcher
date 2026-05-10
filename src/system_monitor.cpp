@@ -21,7 +21,7 @@ RamMetrics SystemMonitor::get_ram_usage() const
     RamMetrics metrics;
     metrics.total_gb = bytes_to_gb(memInfo.ullTotalPhys);
     metrics.available_gb = bytes_to_gb(memInfo.ullAvailPhys);
-    metrics.usage_percent = bytes_to_gb(memInfo.dwMemoryLoad);
+    metrics.usage_percent = memInfo.dwMemoryLoad;
 
     return metrics;
 }
